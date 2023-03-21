@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #B6486F;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+.paper-title {
+    padding: 16px 0px 16px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+.row, .author-row, .affil-row {
+     overflow: auto;
+}
+.author-row, .affil-row {
+    font-size: 26px;
+}
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affil-row {
+    margin-top: 16px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    /*font-style: italic;*/
+    color: #666;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+video {
+    display: block;
+    margin: auto;
+}
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #B6486F;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+.paper-btn:hover {
+    opacity: 0.85;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.venue {
+    /*color: #B6486F;*/
+    font-size: 30px;
+
+}
+
+</style>
+
+<!-- End : Google Analytics Code -->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title>ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge</title>
+        <meta property="og:description" content="Tackling the Generative Learning Trilemma with Denoising Diffusion GANs"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@ArashVahdat">
+        <meta name="twitter:title" content="Tackling the Generative Learning Trilemma with Denoising Diffusion GANs">
+        <meta name="twitter:description" content="To reduce the number of sampling steps in diffusion models, we propose to model the denoising distribution with conditional GANs. We show our model tackles the generative learning trilemma & achieves high sample quality, diversity & fast sampling.">
+        <meta name="twitter:image" content="https://nvlabs.github.io/denoising-diffusion-gan/assets/thumbnail.png">
+    </head>
+
+ <body>
+<div class="container">
+    <div class="paper-title">
+      <h1>ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge</h1>
+    </div>
+
+    <div id="authors">
+    	<center>
+        <div class="author-row">
+            <div class="col-4 text-center"><a href="http://yunxiangli.top/">Yunxiang Li</a><sup>1</sup></div>
+            <div class="col-4 text-center"><a href="">Zihan Li</a><sup>2</sup></div>
+            <div class="col-4 text-center"><a href="">Kai Zhang</a><sup>3</sup></div>
+            <div class="col-4 text-center"><a href="">Ruilong Dan </a><sup>4</sup></div>
+            <div class="col-4 text-center"><a href="">Michael Dohopolski</a><sup>1</sup></div>
+            <div class="col-4 text-center"><a href="">You Zhang</a><sup>1</sup></div>
+        </div>
+
+        <center>
+            <table align=center width=800px>
+            <tr>
+                <tr align=center width=800px>
+                <center>
+                <span style="font-size:20px"><sup>1</sup> University of Texas Southwestern Medical Center, Dallas, USA</span>
+                </center>
+                </tr>
+
+                <tr align=center width=800px>
+                <center>
+                <span style="font-size:20px"><sup>2</sup>University of Illinois at Urbana-Champaign, Urbana, USA</span>
+                </center>
+                </tr>
+
+                <tr align=center width=800px>
+                <center>
+                <span style="font-size:20px"><sup>2</sup>Ohio State University, Columbus, USA</span>
+                </center>
+                </tr>
+                <tr align=center width=800px>
+                <center>
+                <span style="font-size:20px"><sup>2</sup>Hangzhou Dianzi University, Hangzhou, China</span>
+                </center>
+                </tr>
+            </tr>
+            </table>
+        </center>
+
+        </center>
+        <br>
+        <center><img width="100%" src="./fig/overview.PNG" style="margin-top: 20px; margin-bottom: 3px;"></center>
+        <div class="affil-row">
+            <div class="venue text-center"><b></b></div>
+        </div>
+        <br>
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://arxiv.org/">
+                <span class="material-icons"> description </span> 
+                 Paper
+            </a>
+            <a class="paper-btn" href="https://github.com/n">
+                <span class="material-icons"> code </span> 
+                 Code
+            </a>
+        </div></div>
+    </div>
+
+    <section id="teaser-image">
+            </p><figure style="margin-top: 20px; margin-bottom: 20px;">
+                <img width="100%" src="./fig/chat_example1.png" style="margin-bottom: 20px;">
+                <p class="caption">
+                    An example of talking to ChatDoctor for medical diagnosis.
+                </p><p class="caption">
+            </p>
+    </section>
+
+
+
+    <section id="news">
+        <h2>News</h2>
+        <hr>
+        <div class="row">
+            <!-- <div><span class="material-icons"> event </span> [Dec 2021] Paper presented at NeurIPS 2021.</div> 
+            <div><span class="material-icons"> event </span> [Feb 2022] Our <a href="https://github.com/NVlabs/denoising-diffusion-gan">code</a> has been released.</div>-->
+            <div><span class="material-icons"> event </span> [Mar 2023] Our code, model weight and dataset are available!</div>
+        </div>
+    </section>
+
+    <section id="abstract"/>
+        <h2>Abstract</h2>
+        <hr>
+        <div class="flex-row">
+            <p>
+                Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have not been learned individually and carefully for the medical domain, resulting in poor diagnostic accuracy and inability to give correct recommendations for medical tests, medications, etc.
+We collected more than 700 diseases and their corresponding symptoms, recommended medications, and required medical tests, and then generated 5K doctor-patient conversations. By fine-tuning models of doctor-patient conversations, these models emerge with great potential to understand patients' needs, provide informed advice, and offer valuable assistance in a variety of medical-related fields. The integration of these advanced language models into healthcare can revolutionize the way healthcare professionals and patients communicate, ultimately improving the overall quality of care and patient outcomes. In addition, we will open source all code and datasets and model weights to advance the further development of dialogue models in the medical field.</p>
+        </div>
+    </section>
+
+
+    <section id="intro"/>
+        <h2>Introduction</h2>
+        <hr>
+        <div class="flex-row">
+
+        </div>
+
+        <div class="flex-row">
+            <p>
+                The development of instruction-following large language models (LLMs) such as ChatGPT has garnered significant attention due to their remarkable success in instruction understanding and human-like response generation.
+These auto-regressive LLMs are pre-trained over web-scale natural languages by predicting the next token and then fine-tuned to follow large-scale human instructions.
+Also, they have shown strong performances over a wide range of NLP tasks and generalizations to unseen tasks, demonstrating their potential as a unified solution for various problems such as natural language understanding, text generation, and conversational AI.
+However, the exploration of such general-domain LLMs in the medical field remains relatively untapped, despite the immense potential they hold for transforming healthcare communication and decision-making.
+The specific reason is that the existing models do not learn the medical field in detail, resulting in the models often giving wrong diagnoses and wrong medical advice when playing the role of a doctor. By fine-tuning the large language dialogue model on the data of doctor-patient conversations, the application of the model in the medical field can be significantly improved. Especially in areas where medical resources are scarce, ChatDoctor can be used for initial diagnosis and triage of patients, significantly improving the operational efficiency of existing hospitals.
+
+Since large language models such as ChatGPT are in a non-open source state, we used Meta's LLaMA and first trained a generic conversation model using 52K instruction-following data provided by Stanford Alpaca, and then fine-tuned the model on our collected physician-patient conversation dataset.
+The main contributions of our method are three-fold:
+1) We designed a process framework for fine-tuning large language models in the medical domain.
+2) We collected a training data with 5,000 doctor-patient conversations for fine-tuning the large language model.
+3) We validate that the fine-tuned bigrams with medical domain knowledge have real potential for clinical application.
+
+            </p>
+        </div>
+    </section>
+
+
+    <section id="advantages"/>
+        <h2>Physician and patient conversation dataset</h2>
+        <hr>
+        <div class="flex-row">
+              <p>
+                  The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
+              </p>
+        </div>
+
+    </section>
+
+    <section id="novelties"/>
+        <h2>Training of the model</h2>
+        <hr>
+        <div class="flex-row">
+We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly accessible LLM.
+Notably, in spite of its 7 billion parameters, LLaMA has been reported that LLaMA's efficacy can attain competitive or superior outcomes in comparison to the considerably larger GPT-3 (with 175 billion parameters) on several NLP benchmarks.
+LLaMA's performance improvement was achieved by amplifying the magnitude of training data, as opposed to parameter quantity.
+Specifically, LLaMA was trained on 1.4 trillion tokens, procured from publicly accessible data repositories such as CommonCrawl and arXiv documents.
+
+We utilize conversation demonstrations synthesized via ChatGPT and subsequently validated by medical practitioners to fine-tune the LLaMA model, in accordance with the Stanford Alpaca training methodology.
+The fine-tuning process was conducted using 6 A*100 GPUs for a duration of 30 minutes.
+The hyperparameters employed in the training process were as follows: the total batch size of 192, a learning rate of 2e-5, a total of 3 epochs, a maximum sequence length of 512 tokens, a warmup ratio of 0.03, with no weight decay.
+        </div>
+
+    </section>
+
+    <section id="advantages"/>
+        <h2>Limitations</h2>
+        <hr>
+        <div class="flex-row">
+            <p>We emphasize that ChatDoctor is for academic research only and any commercial use and clinical use is prohibited. There are three factors in this decision: First, ChatDoctor is based on LLaMA and has a non-commercial license, so we necessarily inherited this decision. Second, our model is not licensed for healthcare-related purposes. Also, we have not designed sufficient security measures, and the current model still does not guarantee the full correctness of medical diagnoses.
+ </div>
+    </section>
+
+
+    <section id="results">
+        <h2>Discussion and conclusion</h2>
+        <hr>
+        <div class="flex-row">
+        </p>ChatDoctor obtained by fine-tuning large language models on medical domain knowledge has a wide range of potential applications, but due to the unique characteristics of the medical domain, large language errors in diagnosis and medical advice can have serious consequences. And large language models often generate many incorrect statements on the knowledge they do not know. In future work, it will be important to limit large language models to generate only results that they are very sure of. In addition, the model performance is highly correlated with the training data, so in the future, we will further improve the performance of the model by collecting real doctor-patient conversations as training data.</div>
+    <section id="teaser-image1">
+            </p><figure style="margin-top: 20px; margin-bottom: 20px;">
+                <img width="100%" src="./fig/chat_example3.png" style="margin-bottom: 20px;">
+                <p class="caption">
+                   An example of a medical advice consultation with ChatDoctor.
+                </p><p class="caption">
+            </p>
+    </section>
+            <section id="teaser-image2">
+            </p><figure style="margin-top: 20px; margin-bottom: 20px;">
+                <img width="100%" src="./fig/chat_example4.png" style="margin-bottom: 20px;">
+                <p class="caption">
+                   An example of a medical advice consultation with ChatDoctor.
+                </p><p class="caption">
+            </p>
+    </section>
+
+    </section>
+    
+
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>@article{li2023chatdoctor,
+  title={ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge},
+  author={Li, Yunxiang and Li, Zihan and Zhang, Kai and Dan, Ruilong and Dohopolski, Michael and Zhang, You},
+  journal={arxiv},
+  year={2023}
+}
+        </code></pre>
+    </section>
+</div>
+</body>
+</html>
+
