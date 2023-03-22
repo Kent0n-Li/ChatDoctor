@@ -29,7 +29,7 @@ One of the key features of the ChatDoctor model is its ability to learn and adap
 
 Below are some results of the our model. 
 <p align="center" width="100%">
-<img src="fig/chat_example1.png" style="width: 80%; min-width: 300px; display: block; margin: auto;">
+<img src="fig/chat_example3.png" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
  
 
@@ -135,9 +135,7 @@ ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain 
   year={2023}
 }
 ```
-<p align="center" width="100%">
-<img src="fig/chat_example3.png" style="width: 80%; min-width: 300px; display: block; margin: auto;">
-</p>
+
 
 <p align="center" width="100%">
 <img src="fig/chat_example4.png" style="width: 80%; min-width: 300px; display: block; margin: auto;">
