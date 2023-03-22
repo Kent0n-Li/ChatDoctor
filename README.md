@@ -3,10 +3,10 @@
 </p>
 
 
-# [ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge]()
+# [ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge](https://www.yunxiangli.top/ChatDoctor/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://github.com/HUANGLIZI/ChatDoctor/blob/main/LICENSE) 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/) 
-[![Page](https://img.shields.io/badge/Web-Page-yellow)](https://www.python.org/downloads/release/python-390/) 
+[![Page](https://img.shields.io/badge/Web-Page-yellow)]([https://www.python.org/downloads/release/python-390/](https://www.yunxiangli.top/ChatDoctor/)) 
 
 ## Overview
 ChatDoctor is a next-generation AI doctor model that is based on the [LLaMA](https://github.com/facebookresearch/llama) model. The goal of this project is to provide patients with an intelligent and reliable healthcare companion that can answer their medical queries and provide them with personalized medical advice.
