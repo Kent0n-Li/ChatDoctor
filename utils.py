@@ -15,7 +15,7 @@ import copy
 
 StrOrOpenAIObject = Union[str, openai_object.OpenAIObject]
 
-openai.api_key ='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'
+openai.api_key =''
 openai_org = os.getenv("OPENAI_ORG")
 if openai_org is not None:
     openai.organization = openai_org
