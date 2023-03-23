@@ -37,18 +37,7 @@ Below are some results of the our model.
 Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have not been learned individually and carefully for the medical domain, resulting in poor diagnostic accuracy and inability to give correct recommendations for medical tests, medications, etc. 
 We collected more than 700 diseases and their corresponding symptoms, recommended medications, and required medical tests, and then generated 5K doctor-patient conversations. By fine-tuning models of doctor-patient conversations, these models emerge with great potential to understand patients' needs, provide informed advice, and offer valuable assistance in a variety of medical-related fields. The integration of these advanced language models into healthcare can revolutionize the way healthcare professionals and patients communicate, ultimately improving the overall quality of care and patient outcomes. In addition, we will open source all code and datasets and model weights to advance the further development of dialogue models in the medical field.
 
-## Introduction
-The development of instruction-following large language models (LLMs) such as ChatGPT has garnered significant attention due to their remarkable success in instruction understanding and human-like response generation.
-These auto-regressive LLMs are pre-trained over web-scale natural languages by predicting the next token and then fine-tuned to follow large-scale human instructions.
-Also, they have shown strong performances over a wide range of NLP tasks and generalizations to unseen tasks, demonstrating their potential as a unified solution for various problems such as natural language understanding, text generation, and conversational AI.
-However, the exploration of such general-domain LLMs in the medical field remains relatively untapped, despite the immense potential they hold for transforming healthcare communication and decision-making.
-The specific reason is that the existing models do not learn the medical field in detail, resulting in the models often giving wrong diagnoses and wrong medical advice when playing the role of a doctor. By fine-tuning the large language dialogue model on the data of doctor-patient conversations, the application of the model in the medical field can be significantly improved. Especially in areas where medical resources are scarce, ChatDoctor can be used for initial diagnosis and triage of patients, significantly improving the operational efficiency of existing hospitals.
 
-Since large language models such as ChatGPT are in a non-open source state, we used Meta's LLaMA and first trained a generic conversation model using 52K instruction-following data provided by Stanford Alpaca, and then fine-tuned the model on our collected physician-patient conversation dataset.
-The main contributions of our method are three-fold:
-1) We designed a process framework for fine-tuning large language models in the medical domain.
-2) We collected a training data with 5,000 doctor-patient conversations for fine-tuning the large language model.
-3) We validate that the fine-tuned bigrams with medical domain knowledge have real potential for clinical application.
 
 
 
@@ -61,7 +50,8 @@ pip install -r requirements.txt
 ```
 
  ## Interactive Demo Page:
-We are developing the Demo Page and it is coming soon!
+Demo Page: https://huggingface.co/spaces/kenton-li/ChatDoctor
+It is worth noting that our model has not yet achieved 100% accurate output, please do not apply it to real clinical scenarios.
 
  ## Data and model:
  ### 1. ChatDoctor Training Dataset:
@@ -103,6 +93,20 @@ torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
  ```python
 python chat.py
  ```
+ 
+ 
+ ## Introduction
+The development of instruction-following large language models (LLMs) such as ChatGPT has garnered significant attention due to their remarkable success in instruction understanding and human-like response generation.
+These auto-regressive LLMs are pre-trained over web-scale natural languages by predicting the next token and then fine-tuned to follow large-scale human instructions.
+Also, they have shown strong performances over a wide range of NLP tasks and generalizations to unseen tasks, demonstrating their potential as a unified solution for various problems such as natural language understanding, text generation, and conversational AI.
+However, the exploration of such general-domain LLMs in the medical field remains relatively untapped, despite the immense potential they hold for transforming healthcare communication and decision-making.
+The specific reason is that the existing models do not learn the medical field in detail, resulting in the models often giving wrong diagnoses and wrong medical advice when playing the role of a doctor. By fine-tuning the large language dialogue model on the data of doctor-patient conversations, the application of the model in the medical field can be significantly improved. Especially in areas where medical resources are scarce, ChatDoctor can be used for initial diagnosis and triage of patients, significantly improving the operational efficiency of existing hospitals.
+
+Since large language models such as ChatGPT are in a non-open source state, we used Meta's LLaMA and first trained a generic conversation model using 52K instruction-following data provided by Stanford Alpaca, and then fine-tuned the model on our collected physician-patient conversation dataset.
+The main contributions of our method are three-fold:
+1) We designed a process framework for fine-tuning large language models in the medical domain.
+2) We collected a training data with 5,000 doctor-patient conversations for fine-tuning the large language model.
+3) We validate that the fine-tuned bigrams with medical domain knowledge have real potential for clinical application.
  
  ## Physician and patient conversation dataset</h2>
 The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
