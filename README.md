@@ -133,7 +133,7 @@ ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain 
 ```
 @misc{ChatDoctor,
   title={ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge},
-  author={Li, Yunxiang and Li, Zihan and Zhang, Kai and Dan, Ruilong and Dohopolski, Michael and Zhang, You},
+  author={Li, Yunxiang and Li, Zihan and Zhang, Kai and Dan, Ruilong and Zhang, You},
   publisher = {GitHub},
   journal = {GitHub repository},
   year={2023}
