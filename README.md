@@ -51,18 +51,6 @@ The main contributions of our method are three-fold:
 3) We validate that the fine-tuned bigrams with medical domain knowledge have real potential for clinical application.
 
 
-## Physician and patient conversation dataset</h2>
-The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
-
-## Training of the model
-We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly accessible LLM.
-Notably, in spite of its 7 billion parameters, LLaMA has been reported that LLaMA's efficacy can attain competitive or superior outcomes in comparison to the considerably larger GPT-3 (with 175 billion parameters) on several NLP benchmarks.
-LLaMA's performance improvement was achieved by amplifying the magnitude of training data, as opposed to parameter quantity.
-Specifically, LLaMA was trained on 1.4 trillion tokens, procured from publicly accessible data repositories such as CommonCrawl and arXiv documents.
-We utilize conversation demonstrations synthesized via ChatGPT and subsequently validated by medical practitioners to fine-tune the LLaMA model, in accordance with the Stanford Alpaca training methodology.
-The fine-tuning process was conducted using 6 A*100 GPUs for a duration of 30 minutes.
-The hyperparameters employed in the training process were as follows: the total batch size of 192, a learning rate of 2e-5, a total of 3 epochs, a maximum sequence length of 512 tokens, a warmup ratio of 0.03, with no weight decay.
-
 
 
 
@@ -115,6 +103,18 @@ torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
  ```python
 python chat.py
  ```
+ 
+ ## Physician and patient conversation dataset</h2>
+The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
+
+## Training of the model
+We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly accessible LLM.
+Notably, in spite of its 7 billion parameters, LLaMA has been reported that LLaMA's efficacy can attain competitive or superior outcomes in comparison to the considerably larger GPT-3 (with 175 billion parameters) on several NLP benchmarks.
+LLaMA's performance improvement was achieved by amplifying the magnitude of training data, as opposed to parameter quantity.
+Specifically, LLaMA was trained on 1.4 trillion tokens, procured from publicly accessible data repositories such as CommonCrawl and arXiv documents.
+We utilize conversation demonstrations synthesized via ChatGPT and subsequently validated by medical practitioners to fine-tune the LLaMA model, in accordance with the Stanford Alpaca training methodology.
+The fine-tuning process was conducted using 6 A*100 GPUs for a duration of 30 minutes.
+The hyperparameters employed in the training process were as follows: the total batch size of 192, a learning rate of 2e-5, a total of 3 epochs, a maximum sequence length of 512 tokens, a warmup ratio of 0.03, with no weight decay.
 
 ## Limitations
 We emphasize that ChatDoctor is for academic research only and any commercial use and clinical use is prohibited. There are three factors in this decision: First, ChatDoctor is based on LLaMA and has a non-commercial license, so we necessarily inherited this decision. Second, our model is not licensed for healthcare-related purposes. Also, we have not designed sufficient security measures, and the current model still does not guarantee the full correctness of medical diagnoses.
