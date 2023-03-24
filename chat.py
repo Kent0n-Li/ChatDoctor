@@ -10,6 +10,7 @@ import time
 model = None
 tokenizer = None
 generator = None
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 def load_model(model_name, eight_bit=0, device_map="auto"):
     global model, tokenizer, generator
@@ -31,6 +32,7 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
         torch_dtype=torch.float16,
         #max_memory = {0: "14GB", 1: "14GB", 2: "14GB", 3: "14GB",4: "14GB",5: "14GB",6: "14GB",7: "14GB"},
         #load_in_8bit=eight_bit,
+        #from_tf=True,
         low_cpu_mem_usage=True,
         load_in_8bit=False,
         cache_dir="cache"
@@ -38,13 +40,16 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
 
     generator = model.generate
 
-load_model("./pretrained")
+load_model("./pretrained/")
 
+First_chat = "ChatDoctor: I am ChatDoctor, what medical questions do you have?"
+print(First_chat)
 history = []
+history.append(First_chat)
 
 def go():
-    invitation = "Assistant: "
-    human_invitation = "Human: "
+    invitation = "ChatDoctor: "
+    human_invitation = "Patient: "
 
     # input
     msg = input(human_invitation)
@@ -52,11 +57,12 @@ def go():
 
     history.append(human_invitation + msg)
 
-    fulltext = "\n\n".join(history) + "\n\n" + invitation
-
-#    print('SENDING==========')
-#    print(fulltext)
-#    print('==========')
+    fulltext = "If you are a doctor, please answer the medical questions based on the patient's description. \n\n" + "\n\n".join(history) + "\n\n" + invitation
+    #fulltext = "\n\n".join(history) + "\n\n" + invitation
+    
+    print('SENDING==========')
+    print(fulltext)
+    print('==========')
 
     generated_text = ""
     gen_in = tokenizer(fulltext, return_tensors="pt").input_ids.cuda()
