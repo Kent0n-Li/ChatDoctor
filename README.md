@@ -63,6 +63,9 @@ You can download the following training dataset
 InstructorDoctor-5K: [link](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
 
 InstructorDoctor-200k: [link](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing) 
+
+InstructorDoctor-200k is based on "MedDialog: a large-scale medical dialogue dataset"
+
  ### 2. Model Weights:
 In order to download the checkpoints, fill this form: [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANUMDIzWlU0QTUxN0YySFROQk9HMVU0N0xJNC4u).
 Place the model weights file in the ./pretrained folder.
