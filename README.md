@@ -15,7 +15,7 @@ Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Da
 [![Page](https://img.shields.io/badge/Web-Page-yellow)](https://www.yunxiangli.top/ChatDoctor/) 
 
 ## News
-We uploaded a larger training data, InstructorDoctor-200k.
+We uploaded a larger training data, [InstructorDoctor-200k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
 
 
 ## Overview
