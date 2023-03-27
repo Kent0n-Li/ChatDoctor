@@ -3,7 +3,7 @@
 </p>
 
 
-# [ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge](https://www.yunxiangli.top/ChatDoctor/)
+# [ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge](https://arxiv.org/abs/2303.14070)
 Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Dan<sup>4</sup>, You Zhang<sup>1</sup>
 <h5>1 University of Texas Southwestern Medical Center, Dallas, USA</h5>
 <h5>2 University of Illinois at Urbana-Champaign, Urbana, USA</h5>
