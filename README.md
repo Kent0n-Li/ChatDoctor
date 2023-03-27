@@ -133,12 +133,13 @@ We emphasize that ChatDoctor is for academic research only and any commercial us
 ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge
 
 ```
-@misc{ChatDoctor,
-  title={ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge},
-  author={Li, Yunxiang and Li, Zihan and Zhang, Kai and Dan, Ruilong and Zhang, You},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  year={2023}
+@misc{yunxiang2023chatdoctor,
+      title={ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge}, 
+      author={Li Yunxiang and Li Zihan and Zhang Kai and Dan Ruilong and Zhang You},
+      year={2023},
+      eprint={2303.14070},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
