@@ -105,7 +105,7 @@ The specific reason is that the existing models do not learn the medical field i
 Since large language models such as ChatGPT are in a non-open source state, we used Meta's LLaMA and first trained a generic conversation model using 52K instruction-following data provided by Stanford Alpaca, and then fine-tuned the model on our collected physician-patient conversation dataset.
 The main contributions of our method are three-fold:
 1) We designed a process framework for fine-tuning large language models in the medical domain.
-2) We collected a training data with 5,000 doctor-patient conversations for fine-tuning the large language model.
+2) We collected a dataset with 5,000 generated doctor-patient conversations and 200,000 real patient-doctor conversations for fine-tuning the large language model.
 3) We validate that the fine-tuned bigrams with medical domain knowledge have real potential for clinical application.
  
  ## Physician and patient conversation dataset</h2>
