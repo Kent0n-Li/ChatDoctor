@@ -111,6 +111,8 @@ The main contributions of our method are three-fold:
  ## Physician and patient conversation dataset</h2>
 The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
 
+The generated conversations, while ensuring accuracy, have a low diversity of conversations. Therefore, we also collected about 200k real doctor-patient conversations from an online Q\&A based medical advisory service website -- "Health Care Magic." We manually and automatically filtered these data to remove physician and patient names and used language tools to correct grammatical errors in the responses. 
+
 ## Training of the model
 We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly accessible LLM.
 Notably, in spite of its 7 billion parameters, LLaMA has been reported that LLaMA's efficacy can attain competitive or superior outcomes in comparison to the considerably larger GPT-3 (with 175 billion parameters) on several NLP benchmarks.
