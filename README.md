@@ -67,8 +67,6 @@ InstructorDoctor-5K: [5k link](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMB
 
 InstructorDoctor-200k: [200k link](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing) 
 
-InstructorDoctor-200k is based on "MedDialog: a large-scale medical dialogue dataset"
-
 Our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic conversational capabilities. [Alpaca link](https://github.com/Kent0n-Li/ChatDoctor/blob/main/alpaca_data.json)
 
  ### 2. Model Weights:
@@ -80,7 +78,7 @@ Place the model weights file in the ./pretrained folder.
  ```python
 torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
     --model_name_or_path <your_path_to_hf_converted_llama_ckpt_and_tokenizer> \
-    --data_path ./chatdoctor5k.json \
+    --data_path ./HealthCareMagic-200k.json \
     --bf16 True \
     --output_dir pretrained \
     --num_train_epochs 3 \
