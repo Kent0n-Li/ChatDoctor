@@ -159,8 +159,5 @@ ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain 
 
 ## Examples:
 
-Below are some results of the our model. 
-<p align="center" width="100%">
-<img src="fig/chat_example3.png" style="width: 80%; min-width: 300px; display: block; margin: auto;">
-</p>
+
 
