@@ -60,9 +60,9 @@ def go():
     fulltext = "If you are a doctor, please answer the medical questions based on the patient's description. \n\n" + "\n\n".join(history) + "\n\n" + invitation
     #fulltext = "\n\n".join(history) + "\n\n" + invitation
     
-    print('SENDING==========')
-    print(fulltext)
-    print('==========')
+    #print('SENDING==========')
+    #print(fulltext)
+    #print('==========')
 
     generated_text = ""
     gen_in = tokenizer(fulltext, return_tensors="pt").input_ids.cuda()
