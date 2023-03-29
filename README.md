@@ -63,9 +63,12 @@ For those who want to try the online demo, please register for hugging face and 
  ## Data and model:
  ### 1. ChatDoctor Training Dataset:
 You can download the following training dataset
-InstructorDoctor-5K: [5k link](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
 
-InstructorDoctor-200k: [200k link](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing) 
+200k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-200k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
+
+26k real conversations between patients and doctors from icliniq.com [icliniq-26k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
+
+5k generated conversations between patients and physicians from ChatGPT [GenMedGPT-5k](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing) and [disease database](https://github.com/Kent0n-Li/ChatDoctor/blob/main/format_dataset.csv). 
 
 Our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic conversational capabilities. [Alpaca link](https://github.com/Kent0n-Li/ChatDoctor/blob/main/alpaca_data.json)
 
