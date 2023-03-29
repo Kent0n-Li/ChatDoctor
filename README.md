@@ -118,7 +118,7 @@ We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly acces
 Notably, in spite of its 7 billion parameters, LLaMA has been reported that LLaMA's efficacy can attain competitive or superior outcomes in comparison to the considerably larger GPT-3 (with 175 billion parameters) on several NLP benchmarks.
 LLaMA's performance improvement was achieved by amplifying the magnitude of training data, as opposed to parameter quantity.
 Specifically, LLaMA was trained on 1.4 trillion tokens, procured from publicly accessible data repositories such as CommonCrawl and arXiv documents.
-We utilize conversation demonstrations synthesized via ChatGPT and subsequently validated by medical practitioners to fine-tune the LLaMA model, in accordance with the Stanford Alpaca training methodology.
+We utilize conversation demonstrations synthesized via ChatGPT and subsequently validated by medical practitioners to fine-tune the LLaMA model, in accordance with the Stanford Alpaca training methodology, and our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic conversational capabilities.
 The fine-tuning process was conducted using 6 A*100 GPUs for a duration of 30 minutes.
 The hyperparameters employed in the training process were as follows: the total batch size of 192, a learning rate of 2e-5, a total of 3 epochs, a maximum sequence length of 512 tokens, a warmup ratio of 0.03, with no weight decay.
 
