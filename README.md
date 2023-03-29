@@ -52,13 +52,13 @@ For those who want to try the online demo, please register for hugging face and 
  ## Data and model:
  ### 1. ChatDoctor Training Dataset:
 You can download the following training dataset
-InstructorDoctor-5K: [link](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
+InstructorDoctor-5K: [5k link](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
 
-InstructorDoctor-200k: [link](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing) 
+InstructorDoctor-200k: [200k link](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing) 
 
 InstructorDoctor-200k is based on "MedDialog: a large-scale medical dialogue dataset"
 
-Our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic conversational capabilities. [link](https://github.com/Kent0n-Li/ChatDoctor/blob/main/alpaca_data.json)
+Our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic conversational capabilities. [Alpaca link](https://github.com/Kent0n-Li/ChatDoctor/blob/main/alpaca_data.json)
 
  ### 2. Model Weights:
 In order to download the checkpoints, fill this form: [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANUMDIzWlU0QTUxN0YySFROQk9HMVU0N0xJNC4u).
