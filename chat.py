@@ -10,7 +10,7 @@ import time
 model = None
 tokenizer = None
 generator = None
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 def load_model(model_name, eight_bit=0, device_map="auto"):
     global model, tokenizer, generator
