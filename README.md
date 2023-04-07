@@ -39,7 +39,7 @@ pip install -r requirements.txt
 Demo Page: https://huggingface.co/spaces/ChatDoctor/ChatDoctor
 It is worth noting that our model has not yet achieved 100% accurate output, please do not apply it to real clinical scenarios.
 
-For those who want to try the online demo, please register for hugging face and fill out this form [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANURUU0TllBWVVHUjQ1MDJUNldGTTZWV1c5UC4u).
+For those who want to try the online demo, please register for Hugging Face and fill out this form [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANURUU0TllBWVVHUjQ1MDJUNldGTTZWV1c5UC4u).
 
  ## Data and model:
  ### 1. ChatDoctor Dataset:
