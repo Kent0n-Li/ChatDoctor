@@ -65,7 +65,7 @@ torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
     --data_path ./HealthCareMagic-200k.json \
     --bf16 True \
     --output_dir pretrained \
-    --num_train_epochs 3 \
+    --num_train_epochs 1 \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \
     --gradient_accumulation_steps 8 \
