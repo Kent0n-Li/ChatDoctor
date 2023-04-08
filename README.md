@@ -14,7 +14,7 @@ Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Da
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/) 
 [![Page](https://img.shields.io/badge/Web-Page-yellow)](https://www.yunxiangli.top/ChatDoctor/) 
 ## Resources List
-200k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-200k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
+100k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-100k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
 
 15k real conversations between patients and doctors from icliniq.com [icliniq-15k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
 
@@ -45,7 +45,7 @@ For those who want to try the online demo, please register for hugging face and 
  ### 1. ChatDoctor Dataset:
 You can download the following training dataset
 
-200k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-200k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
+100k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-100k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
 
 15k real conversations between patients and doctors from icliniq.com [icliniq-15k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
 
@@ -62,7 +62,7 @@ Place the model weights file in the ./pretrained folder.
  ```python
 torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
     --model_name_or_path <your_path_to_hf_converted_llama_ckpt_and_tokenizer> \
-    --data_path ./HealthCareMagic-200k.json \
+    --data_path ./HealthCareMagic-100k.json \
     --bf16 True \
     --output_dir pretrained \
     --num_train_epochs 1 \
@@ -90,7 +90,7 @@ python chat.py
  ```
  
 ## Examples:
-We fine-tuned our model on HealthCareMagic-200K and GenMedGPT-5k, and test our model on icliniq-15k.
+We fine-tuned our model on HealthCareMagic-100K and GenMedGPT-5k, and test our model on icliniq-15k.
 
 ```
 Patient question from icliniq-15k: Hi doctor,I am getting one-sided headache. I do not get them often. They are behind my right eye and temple area. Now this time I am also fighting with heavy cold and cough. It came on late morning today and it hurts more when I cough or shake my head or bend over. Prior to this, I had the same headache about four months ago. At that time it came on midafternoon and lasted till next morning. Prior to that, I had the same headache exactly on the right side and lasted for a day. I am on CCB and Protonix. I am scared of brain tumor. Please help
@@ -118,7 +118,7 @@ One of the key features of the ChatDoctor model is its ability to learn and adap
  
 
 ## Abstract
-Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have not been tailored to the medical domain, resulting in poor answer accuracy and inability to give plausible recommendations for medical diagnosis, medications, etc. To address this issue, we collected more than 700 diseases and their corresponding symptoms, required medical tests, and recommended medications, from which we generated 5K doctor-patient conversations. In addition, we obtained 200K real patient-doctor conversations from online Q&A medical consultation sites. By fine-tuning LLMs using these doctor-patient conversations, the resulting models emerge with great potential to understand patients' needs, provide informed advice, and offer valuable assistance in a variety of medical-related fields. The integration of these advanced language models into healthcare can revolutionize the way healthcare professionals and patients communicate, ultimately improving the overall efficiency and quality of patient care and outcomes. In addition, we made public all the source codes, datasets, and model weights to facilitate the further development of dialogue models in the medical field. 
+Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have not been tailored to the medical domain, resulting in poor answer accuracy and inability to give plausible recommendations for medical diagnosis, medications, etc. To address this issue, we collected more than 700 diseases and their corresponding symptoms, required medical tests, and recommended medications, from which we generated 5K doctor-patient conversations. In addition, we obtained 100K real patient-doctor conversations from online Q&A medical consultation sites. By fine-tuning LLMs using these doctor-patient conversations, the resulting models emerge with great potential to understand patients' needs, provide informed advice, and offer valuable assistance in a variety of medical-related fields. The integration of these advanced language models into healthcare can revolutionize the way healthcare professionals and patients communicate, ultimately improving the overall efficiency and quality of patient care and outcomes. In addition, we made public all the source codes, datasets, and model weights to facilitate the further development of dialogue models in the medical field. 
 
 
 
@@ -139,7 +139,7 @@ The main contributions of our method are three-fold:
  ## Physician and patient conversation dataset</h2>
 The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
 
-The generated conversations, while ensuring accuracy, have a low diversity of conversations. Therefore, we also collected about 200k real doctor-patient conversations from an online Q\&A based medical advisory service website -- "Health Care Magic." We manually and automatically filtered these data to remove physician and patient names and used language tools to correct grammatical errors in the responses. 
+The generated conversations, while ensuring accuracy, have a low diversity of conversations. Therefore, we also collected about 100k real doctor-patient conversations from an online Q\&A based medical advisory service website -- "Health Care Magic." We manually and automatically filtered these data to remove physician and patient names and used language tools to correct grammatical errors in the responses. 
 
 ## Training of the model
 We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly accessible LLM.
