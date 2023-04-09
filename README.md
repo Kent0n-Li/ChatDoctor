@@ -57,7 +57,7 @@ Our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic
 In order to download the checkpoints, fill this form: [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANUMDIzWlU0QTUxN0YySFROQk9HMVU0N0xJNC4u).
 Place the model weights file in the ./pretrained folder.
 
- ## How to fine-tuning
+ ## Fine-tuning
 
  ```python
 torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
@@ -79,11 +79,12 @@ torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --fsdp "full_shard auto_wrap" \
+    --tf32 True \
     --fsdp_transformer_layer_cls_to_wrap 'LLaMADecoderLayer' \
-    --tf32 True
+    # --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer' \  # If you use a new version of transformers, such as 4.28, you may need to change LLaMADecoderLayer to LlamaDecoderLayer. Also, you need to change LLaMAForCausalLM to LlamaForCausalLM in ./pretrained/config.json and LLaMATokenizer to LlamaTokenizer in ./pretrained/tokenizer_config.json.
  ```
  
- ## How to inference
+ ## Inference
  You can build a ChatDoctor model on your own machine and communicate with it.
  ```python
 python chat.py

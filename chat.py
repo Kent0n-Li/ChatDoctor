@@ -38,6 +38,21 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
         cache_dir="cache"
     ).cuda()
 
+    # If you use a new version of transformers, such as 4.28, you may need to change LLaMADecoderLayer to LlamaDecoderLayer. Also, you need to change LLaMAForCausalLM to LlamaForCausalLM in ./pretrained/config.json and LLaMATokenizer to LlamaTokenizer in ./pretrained/tokenizer_config.json.
+    # tokenizer = transformers.LlamaTokenizer.from_pretrained(model_name)
+    # model = transformers.LlamaForCausalLM.from_pretrained(
+    #     model_name,
+    #     #device_map=device_map,
+    #     #device_map="auto",
+    #     torch_dtype=torch.float16,
+    #     #max_memory = {0: "14GB", 1: "14GB", 2: "14GB", 3: "14GB",4: "14GB",5: "14GB",6: "14GB",7: "14GB"},
+    #     #load_in_8bit=eight_bit,
+    #     #from_tf=True,
+    #     low_cpu_mem_usage=True,
+    #     load_in_8bit=False,
+    #     cache_dir="cache"
+    # ).cuda()
+
     generator = model.generate
 
 load_model("./pretrained/")
