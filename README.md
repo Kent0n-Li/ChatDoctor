@@ -18,11 +18,7 @@ Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Da
 
 15k real conversations between patients and doctors from icliniq.com [icliniq-15k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
 
-5k generated conversations between patients and physicians from ChatGPT [GenMedGPT-5k](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing) and [disease database](https://github.com/Kent0n-Li/ChatDoctor/blob/main/format_dataset.csv). 
-
 Checkpoints of ChatDoctor, fill this [form](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANUMDIzWlU0QTUxN0YySFROQk9HMVU0N0xJNC4u).
-
-Online Hugging Face demo [application form](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANURUU0TllBWVVHUjQ1MDJUNldGTTZWV1c5UC4u).
 
 Stanford Alpaca data for basic conversational capabilities. [Alpaca link](https://github.com/Kent0n-Li/ChatDoctor/blob/main/alpaca_data.json).
 
@@ -81,6 +77,22 @@ torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
     --fsdp "full_shard auto_wrap" \
     --fsdp_transformer_layer_cls_to_wrap 'LLaMADecoderLayer' \
     --tf32 True
+ ```
+ 
+ 
+Fine-tuning with Lora 
+```python
+WORLD_SIZE=6 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 torchrun --nproc_per_node=6 --master_port=4567 train_lora.py \
+  --base_model './weights-alpaca/' \
+  --data_path 'HealthCareMagic-100k.json' \
+  --output_dir './lora_models/' \
+  --batch_size 32 \
+  --micro_batch_size 4 \
+  --num_epochs 1 \
+  --learning_rate 3e-5 \
+  --cutoff_len 256 \
+  --val_set_size 120 \
+  --adapter_name lora
  ```
  
  ## How to inference
