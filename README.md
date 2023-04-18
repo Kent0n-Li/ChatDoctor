@@ -23,12 +23,12 @@ Checkpoints of ChatDoctor, fill this [form](https://forms.office.com/Pages/Respo
 Stanford Alpaca data for basic conversational capabilities. [Alpaca link](https://github.com/Kent0n-Li/ChatDoctor/blob/main/alpaca_data.json).
 
 
-<p align="center" width="80%">
-<img src="fig/overview.PNG" style="width: 40%; min-width: 300px; display: block; margin: auto;">
+<p align="center" width="100%">
+<img src="fig/overview.PNG" style="width: 70%; min-width: 300px; display: block; margin: auto;">
 </p>
 
-<p align="center" width="80%">
-<img src="fig/wiki.PNG" style="width: 40%; min-width: 300px; display: block; margin: auto;">
+<p align="center" width="100%">
+<img src="fig/wiki.PNG" style="width: 70%; min-width: 300px; display: block; margin: auto;">
 </p>
 
 
