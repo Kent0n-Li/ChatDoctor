@@ -109,12 +109,12 @@ python chat.py
  ```
  
   ```python
-cd Autonomous ChatDoctor Excel
+cd Autonomous_ChatDoctor_csv
 python chat_csv.py
  ```
  
   ```python
-cd Autonomous ChatDoctor Wikipedia
+cd Autonomous_ChatDoctor_Wikipedia
 python chat_wiki.py
  ```
  
