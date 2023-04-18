@@ -1,0 +1,13 @@
+disease,Symptom
+Endophthalmitis,"['Pain in eye', 'Eye redness', 'Swollen eye', 'Diminished vision', 'Itchiness of eye', 'Mass on eyelid', 'Paresthesia', 'Painful sinuses', 'Skin lesion', 'Foot or toe pain', 'Lacrimation', 'Painful urination']"
+Anxiety,"['Anxiety and nervousness', 'Depression', 'Sharp chest pain', 'Depressive or psychotic symptoms', 'Shortness of breath', 'Headache', 'Insomnia', 'Palpitations', 'Abnormal involuntary movements', 'Irregular heartbeat', 'Fears and phobias', 'Increased heart rate']"
+Anal fissure,"['Rectal bleeding', 'Pain of the anus', 'Blood in stool', 'Constipation', 'Sharp abdominal pain', 'Changes in stool appearance', 'Lower body pain', 'Irregular belly button', 'Cramps and spasms', 'Vaginal dryness', 'Symptoms of prostate', 'Itchiness of eye']"
+Hiatal hernia,"['Sharp abdominal pain', 'Sharp chest pain', 'Nausea', 'Vomiting', 'Difficulty in swallowing', 'Burning abdominal pain', 'Dizziness', 'Heartburn', 'Back pain', 'Upper abdominal pain', 'Vomiting blood', 'Regurgitation']"
+Poisoning due to antidepressants,"['Depression', 'Disturbance of memory', 'Drug abuse', 'Headache', 'Sleepiness', 'Abusing alcohol', 'Allergic reaction', 'Weakness', 'Fainting', 'Muscle pain', 'Emotional symptoms', 'Back weakness']"
+Open wound of the jaw,"['Facial pain', 'Lip swelling', 'Symptoms of the face', 'Wrist swelling', 'Mouth pain']"
+Pulmonary eosinophilia,"['Cough', 'Shortness of breath', 'Fever', 'Nasal congestion', 'Sharp chest pain', 'Difficulty breathing', 'Dizziness', 'Ache all over', 'Nosebleed', 'Redness in ear', 'Fluid retention', 'Paresthesia']"
+Poisoning due to anticonvulsants,"['Problems with movement', 'Seizures', 'Dizziness', 'Vomiting', 'Feeling ill', 'Depression', 'Headache', 'Difficulty speaking', 'Ringing in ear', 'Itching of skin', 'Pain in eye', 'Slurring words']"
+Pilonidal cyst,"['Skin growth', 'Lower body pain', 'Ache all over', 'Skin swelling', 'Pain of the anus', 'Bones are painful', 'Back mass or lump', 'Mass or swelling around the anus', 'Pelvic pain', 'Fluid retention', 'Low back swelling', 'Irregular appearing scalp']"
+Dislocation of the hip,"['Hip pain', 'Knee pain', 'Leg pain', 'Back pain', 'Groin pain', 'Hip stiffness or tightness', 'Abusing alcohol']"
+Lung cancer,"['Shortness of breath', 'Cough', 'Fatigue', 'Decreased appetite', 'Hemoptysis', 'Drainage in throat', 'Leg weakness', 'Smoking problems']"
+Tooth disorder,"['Toothache', 'Facial pain', 'Gum pain', 'Ear pain', 'Headache', 'Mouth pain', 'Peripheral edema', 'Jaw swelling', 'Pain in gums', 'Bleeding gums', 'Mouth ulcer', 'Swollen lymph nodes']"
