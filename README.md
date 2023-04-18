@@ -43,7 +43,7 @@ You can download the following training dataset
 
 100k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-100k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
 
-15k real conversations between patients and doctors from icliniq.com [icliniq-15k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
+10k real conversations between patients and doctors from icliniq.com [icliniq-10k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
 
 5k generated conversations between patients and physicians from ChatGPT [GenMedGPT-5k](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing) and [disease database](https://github.com/Kent0n-Li/ChatDoctor/blob/main/format_dataset.csv). 
 
@@ -130,37 +130,32 @@ One of the key features of the ChatDoctor model is its ability to learn and adap
  
 
 ## Abstract
-Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have not been tailored to the medical domain, resulting in poor answer accuracy and inability to give plausible recommendations for medical diagnosis, medications, etc. To address this issue, we collected more than 700 diseases and their corresponding symptoms, required medical tests, and recommended medications, from which we generated 5K doctor-patient conversations. In addition, we obtained 100K real patient-doctor conversations from online Q&A medical consultation sites. By fine-tuning LLMs using these doctor-patient conversations, the resulting models emerge with great potential to understand patients' needs, provide informed advice, and offer valuable assistance in a variety of medical-related fields. The integration of these advanced language models into healthcare can revolutionize the way healthcare professionals and patients communicate, ultimately improving the overall efficiency and quality of patient care and outcomes. In addition, we made public all the source codes, datasets, and model weights to facilitate the further development of dialogue models in the medical field. 
-
+Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have yet to be adapted for the medical domain, resulting in poor accuracy of responses and an inability to provide sound advice on medical diagnoses, medications, etc. To address this problem, we fine-tuned our ChatDoctor model based on 100k real-world patient-physician conversations from an online medical consultation site. Besides, we add autonomous knowledge retrieval capabilities to our ChatDoctor, for example, Wikipedia or a disease database as a knowledge brain. By fine-tuning the LLMs using these 100k patient-physician conversations, our model showed significant improvements in understanding patients' needs and providing informed advice. The autonomous ChatDoctor model based on Wikipedia and Database Brain can access real-time and authoritative information and answer patient questions based on this information, significantly improving the accuracy of the model's responses, which shows extraordinary potential for the medical field with a low tolerance for error.
 
 
  
  ## Introduction
-The development of instruction-following large language models (LLMs) such as ChatGPT has garnered significant attention due to their remarkable success in instruction understanding and human-like response generation.
-These auto-regressive LLMs are pre-trained over web-scale natural languages by predicting the next token and then fine-tuned to follow large-scale human instructions.
-Also, they have shown strong performances over a wide range of NLP tasks and generalizations to unseen tasks, demonstrating their potential as a unified solution for various problems such as natural language understanding, text generation, and conversational AI.
-However, the exploration of such general-domain LLMs in the medical field remains relatively untapped, despite the immense potential they hold for transforming healthcare communication and decision-making.
-The specific reason is that the existing models do not learn the medical field in detail, resulting in the models often giving wrong diagnoses and wrong medical advice when playing the role of a doctor. By fine-tuning the large language dialogue model on the data of doctor-patient conversations, the application of the model in the medical field can be significantly improved. Especially in areas where medical resources are scarce, ChatDoctor can be used for initial diagnosis and triage of patients, significantly improving the operational efficiency of existing hospitals.
+The development of instruction-following large-scale language models (LLMs) such as ChatGPT has gained significant attention due to their remarkable success in instruction understanding and human-like response generation.
+These auto-regressive LLMs are pre-trained on web-scale natural language by predicting the next token and then fine-tuned to follow large-scale human instructions.
+At the same time, they show robust performance on a wide range of natural language processing (NLP) tasks and generalize to unseen tasks, demonstrating their potential as unified solutions to various problems in natural language understanding, text generation, and conversational artificial intelligence.
+However, exploring such generalized domain LLMs in the medical domain remains relatively unexplored \cite{gilson2023does}, despite their great potential to transform medical communication and decision-making.
+The reason is that existing models need to learn the medical domain specifically or in detail, resulting in models that often give incorrect medical responses. 
 
-Since large language models such as ChatGPT are in a non-open source state, we used Meta's LLaMA and first trained a generic conversation model using 52K instruction-following data provided by Stanford Alpaca, and then fine-tuned the model on our collected physician-patient conversation dataset.
-The main contributions of our method are three-fold:
-1) We designed a process framework for fine-tuning large language models in the medical domain.
-2) We collected a dataset with 5,000 generated doctor-patient conversations and 200,000 real patient-doctor conversations for fine-tuning the large language model.
-3) We validate that the fine-tuned bigrams with medical domain knowledge have real potential for clinical application.
+By fine-tuning large linguistic dialogue models on data from doctor-patient conversations, the models' ability to understand patients' needs can be significantly improved. Furthermore, to improve the model's credibility, we also designed a knowledge brain based on Wikipedia and medical-domain databases, which can access real-time and authoritative information and answer patients' questions based on this reliable information, which is vital for the medical field with low error tolerance. Through extensive experiments, we found that the fine-tuned model of doctor-patient dialogue outperforms ChatGPT in terms of precision, recall, and F1. In addition, the autonomous ChatDoctor model can answer the latest medical questions like Mpox. 
+Since large language models such as ChatGPT are in a non-open source state, we used Meta's open-source LLaMA. We first trained a generic conversation model using 52K instruction-following data from Stanford University's Alpaca. Then we fine-tuned the model on our collected dataset of doctor-patient conversations.
+Our approach has three main contributions: 
+
+1) We designed a framework for fine-tuning large language models in the medical domain.
+2) We collected and open-sourced a dataset with 100k patient-physician conversations for fine-tuning the large language model. The dataset contains extensive medical expertise for the medical application of LLMs. 
+3) Based on the external knowledge brain, we proposed an autonomous ChatDoctor model with online analysis ability of novel expertise.
+
+
  
- ## Physician and patient conversation dataset</h2>
-The first step in building a physician-patient conversation dataset is to collect the disease database that serves as the gold standard. Therefore, we collected and organized a database of diseases, which contains about 700 diseases with their relative symptoms, medical tests, and recommended medications. To train high-quality conversation models on an academic budget, we input each message from the disease database separately as a prompt into the ChatGPT API to automatically generate instruction data. It is worth noting that our prompts to the ChatGPT API contain the gold standard of diseases and symptoms, and drugs, so our fine-tuned ChatDoctor is not only able to achieve ChatGPT's conversational fluency but also higher diagnostic accuracy compared to ChatGPT. We finally collected 5K doctor-patient conversation instructions and named it InstructorDoctor-5K.
+ ## Patient-physician Conversation Dataset</h2>
+The first step in fine-tuning is to collect a dataset of patient-physician conversations. In patient-physician conversations, the patient's descriptions of disease symptoms are often colloquial and cursory. If we manually construct the synthesized patient-physician conversation dataset, it often leads to the problem of insufficient diversity and over-specialized descriptions, which are often spaced out from real scenarios. Collecting real patient-physician conversations is a better solution. Therefore, we collected about 100k real doctor-patient conversations from an online medical consultation website HealthCareMagic(www.healthcaremagic.com). We filtered these data both manually and automatically, removed the identity information of the doctor and patient, and used language tools to correct grammatical errors, and we named this dataset HealthCareMagic-100k. In addition, we collected approximately 10k patient-physician conversations from the online medical consultation website iCliniq to evaluate the performance of our model.
 
-The generated conversations, while ensuring accuracy, have a low diversity of conversations. Therefore, we also collected about 100k real doctor-patient conversations from an online Q\&A based medical advisory service website -- "Health Care Magic." We manually and automatically filtered these data to remove physician and patient names and used language tools to correct grammatical errors in the responses. 
 
-## Training of the model
-We build ChatDoctor utilizing Meta's LLaMA model, a distinguished publicly accessible LLM.
-Notably, in spite of its 7 billion parameters, LLaMA has been reported that LLaMA's efficacy can attain competitive or superior outcomes in comparison to the considerably larger GPT-3 (with 175 billion parameters) on several NLP benchmarks.
-LLaMA's performance improvement was achieved by amplifying the magnitude of training data, as opposed to parameter quantity.
-Specifically, LLaMA was trained on 1.4 trillion tokens, procured from publicly accessible data repositories such as CommonCrawl and arXiv documents.
-We utilize conversation demonstrations synthesized via ChatGPT and subsequently validated by medical practitioners to fine-tune the LLaMA model, in accordance with the Stanford Alpaca training methodology, and our model was firstly be fine-tuned by Stanford Alpaca's data to have some basic conversational capabilities.
-The fine-tuning process was conducted using 6 A*100 GPUs for a duration of 30 minutes.
-The hyperparameters employed in the training process were as follows: the total batch size of 192, a learning rate of 2e-5, a total of 3 epochs, a maximum sequence length of 512 tokens, a warmup ratio of 0.03, with no weight decay.
+
 
 ## Limitations
 We emphasize that ChatDoctor is for academic research only and any commercial use and clinical use is prohibited. There are three factors in this decision: First, ChatDoctor is based on LLaMA and has a non-commercial license, so we necessarily inherited this decision. Second, our model is not licensed for healthcare-related purposes. Also, we have not designed sufficient security measures, and the current model still does not guarantee the full correctness of medical diagnoses.
