@@ -112,4 +112,5 @@ def csv_prompter(question,csv_name):
 
 question = "If I have frontal headache, fever, and painful sinuses, what disease should I have, and what medical test should I take?"
 csv_name = "disease_database_mini.csv"
-csv_prompter(question,csv_name)
+FinalAnswer=csv_prompter(question,csv_name)
+print(FinalAnswer)
