@@ -108,6 +108,16 @@ WORLD_SIZE=6 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5 torchrun --nproc_per_node=6 --mast
 python chat.py
  ```
  
+  ```python
+cd Autonomous ChatDoctor Excel
+python chat_csv.py
+ ```
+ 
+  ```python
+cd Autonomous ChatDoctor Wikipedia
+python chat_wiki.py
+ ```
+ 
 ## Examples:
 We fine-tuned our model on HealthCareMagic-100K and GenMedGPT-5k, and test our model on icliniq-15k.
 
