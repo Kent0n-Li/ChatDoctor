@@ -24,11 +24,11 @@ Stanford Alpaca data for basic conversational capabilities. [Alpaca link](https:
 
 
 <p align="center" width="80%">
-<img src="fig/overview.png" style="width: 40%; min-width: 300px; display: block; margin: auto;">
+<img src="fig/overview.PNG" style="width: 40%; min-width: 300px; display: block; margin: auto;">
 </p>
 
 <p align="center" width="80%">
-<img src="fig/wiki.png" style="width: 40%; min-width: 300px; display: block; margin: auto;">
+<img src="fig/wiki.PNG" style="width: 40%; min-width: 300px; display: block; margin: auto;">
 </p>
 
 
