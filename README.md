@@ -14,7 +14,7 @@ Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Da
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/) 
 [![Page](https://img.shields.io/badge/Web-Page-yellow)](https://www.yunxiangli.top/ChatDoctor/) 
 ## Resources List
-[Autonomous ChatDoctor with Disease Database](https://huggingface.co/spaces/kenton-li/chatdoctor_csv).
+Autonomous ChatDoctor with Disease Database [Demo](https://huggingface.co/spaces/kenton-li/chatdoctor_csv).
 
 100k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-100k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
 
