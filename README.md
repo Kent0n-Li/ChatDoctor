@@ -14,6 +14,8 @@ Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Da
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/) 
 [![Page](https://img.shields.io/badge/Web-Page-yellow)](https://www.yunxiangli.top/ChatDoctor/) 
 ## Resources List
+[Autonomous ChatDoctor with Disease Database](https://huggingface.co/spaces/kenton-li/chatdoctor_csv).
+
 100k real conversations between patients and doctors from HealthCareMagic.com [HealthCareMagic-100k](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing).
 
 Real conversations between patients and doctors from icliniq.com [icliniq-10k](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing).
@@ -39,7 +41,7 @@ pip install -r requirements.txt
 ```
 
  ## Interactive Demo Page:
-Demo Page: https://huggingface.co/spaces/ChatDoctor/ChatDoctor
+Demo Page: https://huggingface.co/spaces/kenton-li/chatdoctor_csv
 It is worth noting that our model has not yet achieved 100% accurate output, please do not apply it to real clinical scenarios.
 
 For those who want to try the online demo, please register for hugging face and fill out this form [link](https://forms.office.com/Pages/ResponsePage.aspx?id=lYZBnaxxMUy1ssGWyOw8ij06Cb8qnDJKvu2bVpV1-ANURUU0TllBWVVHUjQ1MDJUNldGTTZWV1c5UC4u).
