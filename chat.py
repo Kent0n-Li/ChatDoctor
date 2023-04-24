@@ -24,8 +24,8 @@ def load_model(model_name, eight_bit=0, device_map="auto"):
     gpu_count = torch.cuda.device_count()
     print('gpu_count', gpu_count)
 
-    tokenizer = transformers.LLaMATokenizer.from_pretrained(model_name)
-    model = transformers.LLaMAForCausalLM.from_pretrained(
+    tokenizer = transformers.LlamaTokenizer.from_pretrained(model_name)
+    model = transformers.LlamaTokenizer.from_pretrained(
         model_name,
         #device_map=device_map,
         #device_map="auto",
