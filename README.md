@@ -145,31 +145,6 @@ The ChatDoctor model is designed to simulate a conversation between a doctor and
 One of the key features of the ChatDoctor model is its ability to learn and adapt over time. As more patients interact with the model, it will continue to refine its responses and improve its accuracy. This means that patients can expect to receive increasingly personalized and accurate medical advice over time.
 
 
-
- 
-
-## Abstract
-Recent large language models (LLMs) in the general domain, such as ChatGPT, have shown remarkable success in following instructions and producing human-like responses. However, such language models have yet to be adapted for the medical domain, resulting in poor accuracy of responses and an inability to provide sound advice on medical diagnoses, medications, etc. To address this problem, we fine-tuned our ChatDoctor model based on 100k real-world patient-physician conversations from an online medical consultation site. Besides, we add autonomous knowledge retrieval capabilities to our ChatDoctor, for example, Wikipedia or a disease database as a knowledge brain. By fine-tuning the LLMs using these 100k patient-physician conversations, our model showed significant improvements in understanding patients' needs and providing informed advice. The autonomous ChatDoctor model based on Wikipedia and Database Brain can access real-time and authoritative information and answer patient questions based on this information, significantly improving the accuracy of the model's responses, which shows extraordinary potential for the medical field with a low tolerance for error.
-
-
- 
- ## Introduction
-The development of instruction-following large-scale language models (LLMs) such as ChatGPT has gained significant attention due to their remarkable success in instruction understanding and human-like response generation.
-These auto-regressive LLMs are pre-trained on web-scale natural language by predicting the next token and then fine-tuned to follow large-scale human instructions.
-At the same time, they show robust performance on a wide range of natural language processing (NLP) tasks and generalize to unseen tasks, demonstrating their potential as unified solutions to various problems in natural language understanding, text generation, and conversational artificial intelligence.
-However, exploring such generalized domain LLMs in the medical domain remains relatively unexplored \cite{gilson2023does}, despite their great potential to transform medical communication and decision-making.
-The reason is that existing models need to learn the medical domain specifically or in detail, resulting in models that often give incorrect medical responses. 
-
-By fine-tuning large linguistic dialogue models on data from doctor-patient conversations, the models' ability to understand patients' needs can be significantly improved. Furthermore, to improve the model's credibility, we also designed a knowledge brain based on Wikipedia and medical-domain databases, which can access real-time and authoritative information and answer patients' questions based on this reliable information, which is vital for the medical field with low error tolerance. Through extensive experiments, we found that the fine-tuned model of doctor-patient dialogue outperforms ChatGPT in terms of precision, recall, and F1. In addition, the autonomous ChatDoctor model can answer the latest medical questions like Mpox. 
-Since large language models such as ChatGPT are in a non-open source state, we used Meta's open-source LLaMA. We first trained a generic conversation model using 52K instruction-following data from Stanford University's Alpaca. Then we fine-tuned the model on our collected dataset of doctor-patient conversations.
-Our approach has three main contributions: 
-
-1) We designed a framework for fine-tuning large language models in the medical domain.
-2) We collected and open-sourced a dataset with 100k patient-physician conversations for fine-tuning the large language model. The dataset contains extensive medical expertise for the medical application of LLMs. 
-3) Based on the external knowledge brain, we proposed an autonomous ChatDoctor model with online analysis ability of novel expertise.
-
-
- 
  ## Patient-physician Conversation Dataset</h2>
 The first step in fine-tuning is to collect a dataset of patient-physician conversations. In patient-physician conversations, the patient's descriptions of disease symptoms are often colloquial and cursory. If we manually construct the synthesized patient-physician conversation dataset, it often leads to the problem of insufficient diversity and over-specialized descriptions, which are often spaced out from real scenarios. Collecting real patient-physician conversations is a better solution. Therefore, we collected about 100k real doctor-patient conversations from an online medical consultation website HealthCareMagic(www.healthcaremagic.com). We filtered these data both manually and automatically, removed the identity information of the doctor and patient, and used language tools to correct grammatical errors, and we named this dataset HealthCareMagic-100k. In addition, we collected approximately 10k patient-physician conversations from the online medical consultation website iCliniq to evaluate the performance of our model.
 
