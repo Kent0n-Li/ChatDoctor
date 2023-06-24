@@ -4,7 +4,7 @@
 
 
 # [ChatDoctor: A Medical Chat Model Fine-tuned on LLaMA Model using Medical Domain Knowledge](https://www.cureus.com/articles/152858-chatdoctor-a-medical-chat-model-fine-tuned-on-a-large-language-model-meta-ai-llama-using-medical-domain-knowledge#!/)
-Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Dan<sup>4</sup>, You Zhang<sup>1</sup>
+Yunxiang Li<sup>1</sup>, Zihan Li<sup>2</sup>, Kai Zhang<sup>3</sup>, Ruilong Dan<sup>4</sup>, Steve Jiang<sup>1</sup>, You Zhang<sup>1</sup>
 <h5>1 UT Southwestern Medical Center, USA</h5>
 <h5>2 University of Illinois at Urbana-Champaign, USA</h5>
 <h5>3 Ohio State University, USA</h5>
