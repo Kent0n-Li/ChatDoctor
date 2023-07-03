@@ -85,7 +85,7 @@ torchrun --nproc_per_node=4 --master_port=<your_random_port> train.py \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --fsdp "full_shard auto_wrap" \
-    --fsdp_transformer_layer_cls_to_wrap 'LLaMADecoderLayer' \
+    --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer' \
     --tf32 True
  ```
  
